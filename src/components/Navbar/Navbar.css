@@ -1,6 +1,7 @@
 .navbar-parent {
   height: 55px;
-  color: #C1C1C1; }
+  color: #C1C1C1;
+  font-family: "Lato"; }
   .navbar-parent a, .navbar-parent button {
     width: 100%; }
   .navbar-parent i {
@@ -15,7 +16,7 @@
   height: 55px;
   display: flex;
   align-items: center;
-  justify-content: stretch;
+  justify-content: space-between;
   position: absolute;
   z-index: 11;
   font-size: 18px; }
@@ -33,9 +34,7 @@
   justify-content: center;
   align-items: center;
   width: 38px;
-  height: 38px;
-  box-shadow: inset 0 0 10px #581513;
-  background: #AC3028; }
+  height: 38px; }
 
 .hide-pull-down {
   display: none; }
@@ -84,3 +83,22 @@
 @keyframes downwards {
   100% {
     transform: translateY(0%); } }
+
+.navbar_right {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  height: 100%;
+  width: 20%;
+  max-width: 350px;
+  min-width: 270px;
+  z-index: 12;
+  float: right; }
+  .navbar_right img {
+    height: 40px;
+    border-radius: 4px;
+    width: 40px; }
+  .navbar_right div {
+    width: 44px; }

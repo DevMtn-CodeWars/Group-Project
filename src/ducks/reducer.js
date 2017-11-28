@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
-    user: {cats_id: 1},
+    user: {cats_id: 1, username: "Thomas", image_url: "http://www.gettyimages.com/gi-resources/images/Embed/new/embed2.jpg", honor: 500, clan: "Ninjas", last_seen_at: "2017-11-14", created_at: "2017-11-14"},
     searchResults: []
 }
 
@@ -10,7 +10,7 @@ const GET_USER_INFO = "GET_USER_INFO";
 const TRANSFER_SEARCH_RESULTS = "TRANSFER_SEARCH_RESULTS";
 
 export function getUserInfo() {
-    const userData = axios.get('http://localhost:3030/auth/me')
+    const userData = axios.get('/auth/me')
     .then( res => {
         return res.data;
     })
