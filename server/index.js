@@ -11,7 +11,7 @@ const controller = require('./controllers/controller');
 
 const app = express();
 
-//app.use( express.static( `${__dirname}/../build`));
+app.use( express.static( `${__dirname}/../build`));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -130,10 +130,10 @@ passport.deserializeUser(function (id, done) {
 })
 
 const path = require('path')
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, '../build/index.html'));
-// })
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 8086;
 
 app.listen(PORT, () => console.log(`CatFights running on port ${PORT}`))
