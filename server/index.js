@@ -104,6 +104,7 @@ app.post(`/api/createfight`, controller.createCatFight)
 app.post('/api/fightinprogress', controller.postFightInProgress)
 app.post('/api/completedfight', controller.completedFight)
 app.put('/api/fightinprogress', controller.updateFightInProgress)
+app.post('/api/updateClan', controller.updateClan)
 
 app.get('/api/oneRandomCatFight', controller.oneRandomCatFight)
 app.get(`/api/randomCatFight`, controller.randomCatFight)
@@ -132,6 +133,11 @@ passport.deserializeUser(function (id, done) {
             return done(null, user[0]);
         })
 })
+
+const path = require('path')
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'));
+// })
 
 const PORT = process.env.PORT || 3030;
 

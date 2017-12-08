@@ -1,3 +1,9 @@
+.Login {
+  font-family: 'Lato'; }
+  .Login .login_wrapper img {
+    border: 10px solid #B90F17;
+    border-radius: 10px; }
+
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -93,7 +99,7 @@
 /* LOGIN */
 .login_wrapper {
   width: 320px;
-  height: 80vh;
+  height: 70vh;
   background-color: #262729;
   margin: 70px auto; }
   .login_wrapper img {
