@@ -11,7 +11,7 @@ const controller = require('./controllers/controller');
 
 const app = express();
 
-//app.use( express.static( `${__dirname}/../build`));
+app.use( express.static( `${__dirname}/../build`));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -116,6 +116,12 @@ app.get(`/api/searchByTagName/:tag`, controller.searchByTagName)
 app.get('/api/numberofallies/:clanname/:catsid', controller.numberOfAllies)
 
 // OUR ENDPOINTS ABOVE
+
+const path = require('path')
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 
 passport.serializeUser(function (id, done) {
