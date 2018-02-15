@@ -131,6 +131,7 @@ class Create extends Component {
             return
         }
         let { function_error, tests, hiddenTests } = e.data
+        let result_error = [...tests, ...hiddenTests].reduce((arr, test) => { arr.push(test.result_error); return arr }, [])
         // console.log(tests)
         // console.log(hiddenTests)
         let passed = [...tests, ...hiddenTests]
@@ -143,6 +144,7 @@ class Create extends Component {
         }
         this.setState({
             // testResults: e.data,
+            result_error,
             function_error,
             tests,
             hiddenTests,
@@ -429,7 +431,7 @@ class Create extends Component {
 
     render() {
         // console.log(this.state)
-        // console.log(this.state.testResults)
+        console.log(this.state.testResults)
         let { unfinished } = this.state
         return (
             <div onKeyDown={this.onKeyDown} onKeyUp={this.onKeyUp}>
@@ -562,6 +564,7 @@ class Create extends Component {
                             {
                                 this.state.rightAceActive === 1 ?
                                     <Tests
+                                        result_error={this.state.result_error}
                                         function_error={this.state.function_error}
                                         tests={this.state.tests}
                                         args={this.state.args}
@@ -574,6 +577,7 @@ class Create extends Component {
                                     this.state.rightAceActive === 2 ?
                                         <Tests
                                             hidden={true}
+                                            result_error={this.state.result_error}
                                             function_error={this.state.function_error}
                                             tests={this.state.hiddenTests}
                                             args={this.state.args}

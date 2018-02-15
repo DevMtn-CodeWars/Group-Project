@@ -26,7 +26,7 @@ class Test extends Component {
     }
     render() {
         let props = this.props
-        // console.log(props)
+        console.log(props)
         return (
             <div className={this.state.open ? 'Test' : 'Test closed'} onClick={this.state.open ? null : this.toggle} >
                 <div className='test-title' onClick={this.toggle}>
@@ -196,7 +196,7 @@ export default class Tests extends Component {
         return (
             <div className='Tests'>
                 {/* Finish Writing your function before you write your tests */}
-                <FunctionError error={this.props.function_error} />
+                <FunctionError error={this.props.function_error || this.props.result_error} />
                 {
                     this.props.tests ?
                         this.props.tests.map((test, i) => {
